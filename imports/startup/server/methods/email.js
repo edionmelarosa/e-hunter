@@ -11,8 +11,6 @@ let MAIL_URL = Meteor.settings.MAIL_URL;
 if (!MAIL_URL) {
 
     console.log('Configure your SMTP info.');
-}else{
-    console.log('Configured SMTP info.');
 }
 
 Meteor.methods({
@@ -31,7 +29,7 @@ Meteor.methods({
 
             return {
                 success: false,
-                reason: 'Config your SMTP details.'
+                reason: 'Configure your SMTP details.'
             };
         }
 
