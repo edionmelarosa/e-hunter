@@ -24,7 +24,7 @@ This app lets you search for emails associated with a domain and send email.
 
         "private": {
             "emailhunter": {
-                "api_key": "3c358c0e5ecc671988e00274a793176f48b617cc"
+                "api_key": "youremailhuterapikey"
             }
         }
 
