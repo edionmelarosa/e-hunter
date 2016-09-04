@@ -11,6 +11,7 @@ Template.Email.onCreated(function() {
 
     this.error = new ReactiveVar('');
     this.success = new ReactiveVar(false);
+    this.loading = new ReactiveVar(false);
 
 });
 
@@ -33,6 +34,7 @@ Template.Email.events({
         // Reset data
         t.error.set('');
         t.success.set(false);
+        t.loading.set(true);
 
         Meteor.call("sendEmail", data, function(error, result) {
 
@@ -41,8 +43,9 @@ Template.Email.events({
 
                 console.log("error", error);
             }
-        
+
             t.success.set(true);
+            t.loading.set(false);
         });
     }
 });
@@ -50,5 +53,8 @@ Template.Email.events({
 Template.Email.helpers({
     success(){
         return Template.instance().success.get();
+    },
+    loading(){
+        return Template.instance().loading.get();
     }
 });

@@ -12,7 +12,7 @@ import './domain-search.html';
 Template.DomainSearch.onCreated(function() {
 
     this.error = new ReactiveVar('');
-    this.loading = new ReactiveVar('');
+    this.loading = new ReactiveVar(false);
     this.emails = new ReactiveVar([]);
 
 });
@@ -54,6 +54,9 @@ Template.DomainSearch.events({
 Template.DomainSearch.helpers({
     emails() {
         return Template.instance().emails.get();
+    },
+    loading(){
+        return Template.instance().loading.get();
     }
 
 });

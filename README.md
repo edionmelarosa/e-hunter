@@ -31,11 +31,14 @@ This app lets you search for emails associated with a domain and send email.
     }
     ```
 6. Now run your app
+
     ```
     Meteor run settings /yoursettingsfile/
     ```
 
-# Notes:
+# More
+
+This uses [domain-search](https://atmospherejs.com/edionme/domain-searcher) package.
 
 
 # Todo
