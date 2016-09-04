@@ -1,0 +1,34 @@
+<template name="Email">
+    <span>Enter details and hit Send.</span>
+    <br><br>
+
+    {{#if success}}
+        <div class="alert alert-success">
+            Email Sent!
+        </div>
+    {{/if}}
+    <form id="form_id">
+        <div class="form-group">
+            <input type="text" name="" placeholder="Subject" class="form-control" id="subject" value="">
+        </div>
+        <div class="form-group">
+            <input type="email" name="to" placeholder="From" class="form-control" id="from" value="">
+        </div>
+        <div class="form-group">
+            <input type="email" name="from" placeholder="To" class="form-control" id="to" value="">
+        </div>
+        <div class="form-group">
+            <textarea name="body" rows="8" cols="40" class="form-control" id="body"></textarea>
+        </div>
+        <div class="form-group">
+            <button id="form-submit-button" class="btn btn-success btn-lg col-md-4" type="submit" disabled="{{loading}}">
+                {{#if loading}}
+                    <span class="fa fa-spin fa-spinner"></span>
+                {{else}}
+                    <span class="fa fa-search"></span>
+                {{/if}}
+                Send
+            </button>
+        </div>
+    </form>
+</template>

@@ -1,0 +1,54 @@
+body, h1, h2, h3, {
+    color: #555555;
+}
+
+span{
+    color: #888;
+}
+
+.container{
+
+    padding-bottom: 50px;
+
+    .wrap-title{
+        margin-bottom: 50px;
+    }
+    .tab-content{
+        margin-top: 25px;
+    }
+
+    .row{
+
+        form{
+
+            textarea{
+                min-height: 200px;
+            }
+            .form-control{
+                display: block;
+                width: 100%;
+                height: 42px;
+                padding: 10px 15px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #555555;
+                background-color: #ffffff;
+                background-image: none;
+                border: 1px solid #bfbfbf;
+                border-radius: 0px;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            }
+
+        }
+    }
+}
+.wrap-email-permutator{
+
+    .wrap-avai-emails{
+        margin-top: 15px;
+    }
+}

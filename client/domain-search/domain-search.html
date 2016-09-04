@@ -1,0 +1,60 @@
+<template name="DomainSearch">
+    <div class="wrap-email-permutator">
+        <span>Enter a domain name to launch the search.</span>
+        <br><br>
+
+        <form id="form_id">
+            <div class="form-group">
+                <input type="text" name="domain" placeholder="Enter Domain" class="form-control" id="domain" value="">
+            </div>
+            <div class="form-group">
+                <button id="form-submit-button" class="btn btn-success btn-lg col-md-4" type="submit" disabled="{{loading}}">
+                    {{#if loading}}
+                        <span class="fa fa-spin fa-spinner"></span>
+                    {{else}}
+                        <span class="fa fa-search"></span>
+                    {{/if}}
+                    Search
+                </button>
+            </div>
+        </form>
+        <br><br>
+        <div class="wrap-avai-emails">
+            {{#if emails}}
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    {{#each emails}}
+                        {{> AvailableEmails}}
+                    {{/each}}
+                </div>
+            {{else}}
+                {{#if error}}
+                    <div class="alert alert-warning">
+                        {{error}}
+                    </div>
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+</template>
+<template name="AvailableEmails">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#{{name value}}" aria-expanded="false" aria-controls="collapseThree">
+                    {{value}}
+                </a>
+            </h4>
+        </div>
+        <div id="{{name value}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+                <ul>
+                    {{#each source in sources}}
+                        <li>
+                            <a href="{{source.uri}}">{{source.uri}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
